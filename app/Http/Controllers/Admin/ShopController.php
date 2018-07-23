@@ -17,20 +17,22 @@ class ShopController extends Controller
         $shops = Shop::all();
         return view("admin.shop.index",compact("shops"));
     }
-//    public function add(Request $request){
-//          //获取shop_category 的值
-//          $categorys = ShopCategory::all();
-//          if($request->isMethod("post")){
-//              $data = $request->post();
-//              $re = User::create($data);
-//              if($re){
-//                  //获取shop_category_id的值
-//                  $data['shop_category_id'] = $re->id;
-//                  Shop::create($data);
-//              }
-//          }
-//        return view("admin.shop.add",compact("categorys"));
-//    }
+    public function add(Request $request){
+          //获取shop_category 的值
+          $categorys = ShopCategory::all();
+          if($request->isMethod("post")){
+              $data = $request->post();
+              $re = User::create($data);
+              if($re){
+                  //获取shop_category_id的值
+                  $data['shop_category_id'] = $re->id;
+                  Shop::create($data);
+                  $request->session()->flash('success',"添加成功");
+                  return redirect()->route("shop.index");
+              }
+          }
+        return view("admin.shop.add",compact("categorys"));
+    }
     public function edit(Request $request,$id){
         $categorys = ShopCategory::all();
         $shops = Shop::findOrFail($id);
@@ -40,7 +42,7 @@ class ShopController extends Controller
             ]);
             $shops->update($request->post());
             $request->session()->flash('success',"编辑资料成功");
-            return redirect()->route("admin.shop.index");
+            return redirect()->route("shop.index");
         }
         return view("admin.shop.edit",compact('shops','categorys'));
     }
@@ -48,6 +50,6 @@ class ShopController extends Controller
         $shop = Shop::findOrFail($id);
         $shop->delete();
         $request->session()->flash('success',"删除成功");
-        return redirect()->route("admin.shop.index");
+        return redirect()->route("shop.index");
     }
 }
