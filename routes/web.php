@@ -23,6 +23,11 @@ Route::domain('admin.zzqlv.com')->namespace('Admin')->group(function () {
     Route::any('admin/shop_category/edit/{id}',"ShopCategoryController@edit")->name("admin.shop_category.edit");
     Route::get('admin/shop_category/del/{id}',"ShopCategoryController@del")->name("admin.shop_category.del");
 
+    Route::get('activity/index',"ActivityController@index")->name("activity.index");
+    Route::any('activity/add',"ActivityController@add")->name("activity.add");
+    Route::any('activity/edit/{id}',"ActivityController@edit")->name("activity.edit");
+    Route::get('activity/del/{id}',"ActivityController@del")->name("activity.del");
+
 });
 
 
@@ -56,4 +61,21 @@ Route::domain('shop.zzqlv.com')->namespace('Shop')->group(function () {
     Route::any('user/login',"UserController@login")->name("user.login");
     Route::any('user/logout',"UserController@logout")->name("user.logout");
     Route::any('user/mopwd',"UserController@mopwd")->name("user.mopwd");
+
+//菜品分类
+    Route::get('menu/index',"MenuController@index")->name("menu.index");
+    Route::any('menu/add',"MenuController@add")->name("menu.add");
+    Route::any('menu/edit/{id}',"MenuController@edit")->name("menu.edit");
+    Route::get('menu/del/{id}',"MenuController@del")->name("menu.del");
+
+
+//菜品
+    Route::get('menucategories/index',"MenuCategoriesController@index")->name("menucategories.index");
+    Route::any('menucategories/add',"MenuCategoriesController@add")->name("menucategories.add");
+    Route::any('menucategories/edit/{id}',"MenuCategoriesController@edit")->name("menucategories.edit");
+    Route::get('menucategories/del/{id}',"MenuCategoriesController@del")->name("menucategories.del");
+
+    //活动
+    Route::get('activity/index',"ActivityController@index")->name("activity.index");
+    Route::get('activity/look/{id}',"ActivityController@look")->name("activity.look");
 });

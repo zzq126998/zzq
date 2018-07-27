@@ -23,65 +23,65 @@
             <td>操作</td>
         </tr>
         @foreach($shops as $shop)
-        <tr>
-            <td>{{$shop->id}}</td>
-            <td>{{$shop->shop_category_id}}</td>
-            <td>{{$shop->shop_name}}</td>
-            <td>{{$shop->shop_img}}</td>
-            <td>{{$shop->shop_rating}}</td>
-            <td>
-                @if($shop->brand===1)
-                    <i class="glyphicon glyphicon-ok" style="color: darkgreen"></i>
-                @else
-                    <i class="glyphicon glyphicon-remove" style="color: red"></i>
-                @endif
+            <tr>
+                <td>{{$shop->id}}</td>
+                <td>{{$shop->shop_category_id}}</td>
+                <td>{{$shop->shop_name}}</td>
+                <td>{{$shop->shop_img}}</td>
+                <td>{{$shop->shop_rating}}</td>
+                <td>
+                    @if($shop->brand===1)
+                        <i class="glyphicon glyphicon-ok" style="color: darkgreen"></i>
+                    @else
+                        <i class="glyphicon glyphicon-remove" style="color: red"></i>
+                    @endif
                 </td>
-            <td>
-                @if($shop->on_time===1)
-                    <i class="glyphicon glyphicon-ok" style="color: darkgreen"></i>
-                @else
-                    <i class="glyphicon glyphicon-remove" style="color: red"></i>
-                @endif
+                <td>
+                    @if($shop->on_time===1)
+                        <i class="glyphicon glyphicon-ok" style="color: darkgreen"></i>
+                    @else
+                        <i class="glyphicon glyphicon-remove" style="color: red"></i>
+                    @endif
                 </td>
-            <td>
-                @if($shop->fengniao===1)
-                    <i class="glyphicon glyphicon-ok" style="color: darkgreen"></i>
-                @else
-                    <i class="glyphicon glyphicon-remove" style="color: red"></i>
-                @endif
+                <td>
+                    @if($shop->fengniao===1)
+                        <i class="glyphicon glyphicon-ok" style="color: darkgreen"></i>
+                    @else
+                        <i class="glyphicon glyphicon-remove" style="color: red"></i>
+                    @endif
                 </td>
-            <td>
-                @if($shop->bao===1)
-                    <i class="glyphicon glyphicon-ok" style="color: darkgreen"></i>
-                @else
-                    <i class="glyphicon glyphicon-remove" style="color: red"></i>
-                @endif
-            </td>
-            <td>
-                @if($shop->piao===1)
-                    <i class="glyphicon glyphicon-ok" style="color: darkgreen"></i>
-                @else
-                    <i class="glyphicon glyphicon-remove" style="color: red"></i>
-                @endif
+                <td>
+                    @if($shop->bao===1)
+                        <i class="glyphicon glyphicon-ok" style="color: darkgreen"></i>
+                    @else
+                        <i class="glyphicon glyphicon-remove" style="color: red"></i>
+                    @endif
                 </td>
-            <td>
-                @if($shop->zhun===1)
-                    <i class="glyphicon glyphicon-ok" style="color: darkgreen"></i>
-                @else
-                    <i class="glyphicon glyphicon-remove" style="color: red"></i>
-                @endif
-            </td>
-            <td>{{$shop->start_send}}</td>
-            <td>{{$shop->start_cost}}</td>
-            <td>{{$shop->notice}}</td>
-            <td>{{$shop->discount}}</td>
-            <td>{{$shop->status}}</td>
-            <td>
-                <a href="edit/{{$shop->id}}" class="btn btn-info"><i class="glyphicon glyphicon-pencil"></i></a>
-                <a href="del/{{$shop->id}}" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></a>
-            </td>
-        </tr>
-            @endforeach
+                <td>
+                    @if($shop->piao===1)
+                        <i class="glyphicon glyphicon-ok" style="color: darkgreen"></i>
+                    @else
+                        <i class="glyphicon glyphicon-remove" style="color: red"></i>
+                    @endif
+                </td>
+                <td>
+                    @if($shop->zhun===1)
+                        <i class="glyphicon glyphicon-ok" style="color: darkgreen"></i>
+                    @else
+                        <i class="glyphicon glyphicon-remove" style="color: red"></i>
+                    @endif
+                </td>
+                <td>{{$shop->start_send}}</td>
+                <td>{{$shop->start_cost}}</td>
+                <td>{{$shop->notice}}</td>
+                <td>{{$shop->discount}}</td>
+                <td>{{$shop->status}}</td>
+                <td>
+                    <a href="edit/{{$shop->id}}" class="btn btn-info"><i class="glyphicon glyphicon-pencil"></i></a>
+                    <a href="del/{{$shop->id}}" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></a>
+                </td>
+            </tr>
+        @endforeach
     </table>
 
 @endsection

@@ -1,58 +1,71 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+##day1
+###项目需求：
+平台端： 
+- 商家分类管理 
+- 商家管理 
+- 商家审核
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+商户端 
+- 商家注册
 
-## About Laravel
+要求 
+- 商家注册时，同步填写商家信息，商家账号和密码 
+- 商家注册后，需要平台审核通过，账号才能使用 
+- 平台可以直接添加商家信息和账户，默认已审核通过
+###项目流程：
+- 先完成基本的增删改查
+- 根据项目要求来完善项目
+###难点：
+- 注册时要保证商家信息，商家账号和密码的完整性
+###完成度：90%
+##day2
+###项目需求：
+- 平台：平台管理员账号管理
+- 平台：管理员登录和注销功能，修改个人密码(参考微信修改密码功能)
+- 平台：商户账号管理，重置商户密码
+- 商户端：商户登录和注销功能，修改个人密码
+- 修改个人密码
+- 商户状态不是1正常，则商家账号不能登录
+###项目流程：
+- 先完成基本的增删改查
+- 根据项目要求来完善项目
+- 修改密码时需要用到验证密码
+- 登录时要判断商户的状态，商户状态不是正常，则不能登陆
+###难点：
+- 登录判断
+- 修改密码后会跳转到登录页面
+- 注册时要用事务保持数据的完整性
+###完成度：95%
+##day3
+###项目需求：
+####商户端 
+- 菜品分类管理 
+- 菜品管理 
+####要求： 
+- 一个商户只能有且仅有一个默认菜品分类 
+- 只能删除空菜品分类 
+- 必须登录才能管理商户后台（使用中间件实现） 
+- 可以按菜品分类显示该分类下的菜品列表 
+- 可以根据条件（按菜品名称和价格区间）搜索菜品
+###项目流程：
+- 先完成两个表的增删改查
+- 根据项目要求来完善项目
+- 设置中间件来管理后台
+###难点：
+- 搜索的时候不能用原生DB
+###完成度：95%
+##day4
+###项目需求：
+1.平台端：
+- 平台活动管理（活动列表可按条件筛选 未开始/进行中/已结束 的活动） 
+- 活动内容使用ueditor内容编辑器、
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of any modern web application framework, making it a breeze to get started learning the framework.
-
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 1100 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell):
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Pulse Storm](http://www.pulsestorm.net/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+2.商户端：
+- 查看平台活动（活动列表和活动详情） 
+- 活动列表不显示已结束的活动
+####问题
+- 时间的回显 
+####项目流程
+- 先把基本的增删改查做完
+- 再完善需求
+###完成度：96%
