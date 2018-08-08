@@ -3930,7 +3930,7 @@ var wysihtml5 = {
         function saveRanges(ranges, backward) {
             var rangeInfos = [], range, doc;
 
-            // Order the ranges by position within the DOM, latest first, cloning the array to leave the original untouched
+            // order the ranges by position within the DOM, latest first, cloning the array to leave the original untouched
             ranges = ranges.slice(0);
             ranges.sort(compareRanges);
 
@@ -5297,7 +5297,7 @@ wysihtml5.dom.copyAttributes = function(attributesToCopy) {
   };
 })(wysihtml5.dom);
 ;/**
- * Event Delegation
+ * event Delegation
  *
  * @example
  *    wysihtml5.dom.delegate(document.body, "a", "click", function() {

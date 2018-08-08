@@ -2844,7 +2844,7 @@ jQuery.event = {
 			return;
 		}
 
-		// Event object or event type
+		// event object or event type
 		var cache, exclusive, i, cur, old, ontype, special, handle, eventPath, bubbleType,
 			type = event.type || event,
 			namespaces = [];
@@ -2872,9 +2872,9 @@ jQuery.event = {
 			return;
 		}
 
-		// Caller can pass in an Event, Object, or just an event type string
+		// Caller can pass in an event, Object, or just an event type string
 		event = typeof event === "object" ?
-			// jQuery.Event object
+			// jQuery.event object
 			event[ jQuery.expando ] ? event :
 			// Object literal
 			new jQuery.Event( type, event ) :
@@ -2989,7 +2989,7 @@ jQuery.event = {
 
 	dispatch: function( event ) {
 
-		// Make a writable jQuery.Event from the native event object
+		// Make a writable jQuery.event from the native event object
 		event = jQuery.event.fix( event || window.event );
 
 		var i, j, cur, ret, selMatch, matched, matches, handleObj, sel, related,
@@ -3000,7 +3000,7 @@ jQuery.event = {
 			special = jQuery.event.special[ event.type ] || {},
 			handlerQueue = [];
 
-		// Use the fix-ed jQuery.Event rather than the (read-only) native event
+		// Use the fix-ed jQuery.event rather than the (read-only) native event
 		args[0] = event;
 		event.delegateTarget = this;
 
@@ -3249,7 +3249,7 @@ jQuery.Event = function( src, props ) {
 		return new jQuery.Event( src, props );
 	}
 
-	// Event object
+	// event object
 	if ( src && src.type ) {
 		this.originalEvent = src;
 		this.type = src.type;
@@ -3259,7 +3259,7 @@ jQuery.Event = function( src, props ) {
 		this.isDefaultPrevented = ( src.defaultPrevented || src.returnValue === false ||
 			src.getPreventDefault && src.getPreventDefault() ) ? returnTrue : returnFalse;
 
-	// Event type
+	// event type
 	} else {
 		this.type = src;
 	}
@@ -3283,7 +3283,7 @@ function returnTrue() {
 	return true;
 }
 
-// jQuery.Event is based on DOM3 Events as specified by the ECMAScript Language Binding
+// jQuery.event is based on DOM3 Events as specified by the ECMAScript Language Binding
 // http://www.w3.org/TR/2003/WD-DOM-Level-3-Events-20030331/ecma-script-binding.html
 jQuery.Event.prototype = {
 	preventDefault: function() {
@@ -3546,7 +3546,7 @@ jQuery.fn.extend({
 	off: function( types, selector, fn ) {
 		var handleObj, type;
 		if ( types && types.preventDefault && types.handleObj ) {
-			// ( event )  dispatched jQuery.Event
+			// ( event )  dispatched jQuery.event
 			handleObj = types.handleObj;
 			jQuery( types.delegateTarget ).off(
 				handleObj.namespace ? handleObj.origType + "." + handleObj.namespace : handleObj.origType,
@@ -6114,7 +6114,7 @@ function cloneFixAttributes( src, dest ) {
 		dest.text = src.text;
 	}
 
-	// Event data gets referenced instead of copied if the expando
+	// event data gets referenced instead of copied if the expando
 	// gets copied too
 	dest.removeAttribute( jQuery.expando );
 }

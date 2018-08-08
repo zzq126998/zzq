@@ -246,7 +246,7 @@ vjs.CoreObject.create = function(){
   return inst;
 };
 /**
- * @fileoverview Event System (John Resig - Secrets of a JS Ninja http://jsninja.com/)
+ * @fileoverview event System (John Resig - Secrets of a JS Ninja http://jsninja.com/)
  * (Original book version wasn't completely usable, so fixed some things and made Closure Compiler compatible)
  * This should work very similarly to jQuery's events, however it's based off the book version which isn't as
  * robust as jquery's, so there's probably some differences.
@@ -259,7 +259,7 @@ vjs.CoreObject.create = function(){
  * along with a unique id (guid) to the element.
  * @param  {Element|Object}   elem Element or object to bind listeners to
  * @param  {String}   type Type of event to bind to.
- * @param  {Function} fn   Event listener.
+ * @param  {Function} fn   event listener.
  * @private
  */
 vjs.on = function(elem, type, fn){
@@ -401,7 +401,7 @@ vjs.cleanUpEvents = function(elem, type) {
 
 /**
  * Fix a native event to have standard property values
- * @param  {Object} event Event object to fix
+ * @param  {Object} event event object to fix
  * @return {Object}
  * @private
  */
@@ -561,8 +561,8 @@ vjs.trigger = function(elem, event) {
   // event = typeof event === 'object' ?
   //   event[vjs.expando] ?
   //     event :
-  //     new vjs.Event(type, event) :
-  //   new vjs.Event(type);
+  //     new vjs.event(type, event) :
+  //   new vjs.event(type);
 
   // event.type = type;
   // if (handler) {
@@ -782,7 +782,7 @@ vjs.bind = function(context, fn, uid) {
 
 /**
  * Element Data Store. Allows for binding data to an element without putting it directly on the element.
- * Ex. Event listneres are stored here.
+ * Ex. event listneres are stored here.
  * (also from jsninja.com, slightly modified and updated for closure compiler)
  * @type {Object}
  * @private
@@ -1794,8 +1794,8 @@ vjs.Component.prototype.on = function(type, fn){
  *
  *     myComponent.off("eventName", myFunc);
  *
- * @param  {String=}   type Event type. Without type it will remove all listeners.
- * @param  {Function=} fn   Event listener. Without fn it will remove all listeners for a type.
+ * @param  {String=}   type event type. Without type it will remove all listeners.
+ * @param  {Function=} fn   event listener. Without fn it will remove all listeners for a type.
  * @return {vjs.Component}
  */
 vjs.Component.prototype.off = function(type, fn){
@@ -1806,8 +1806,8 @@ vjs.Component.prototype.off = function(type, fn){
 /**
  * Add an event listener to be triggered only once and then removed
  *
- * @param  {String}   type Event type
- * @param  {Function} fn   Event listener
+ * @param  {String}   type event type
+ * @param  {Function} fn   event listener
  * @return {vjs.Component}
  */
 vjs.Component.prototype.one = function(type, fn) {
@@ -2423,7 +2423,7 @@ vjs.Slider.prototype.onBlur = function(){
 /**
  * Listener for click events on slider, used to prevent clicks
  *   from bubbling up to parent elements like button menus.
- * @param  {Object} event Event object
+ * @param  {Object} event event object
  */
 vjs.Slider.prototype.onClick = function(event){
   event.stopImmediatePropagation();

@@ -10,7 +10,7 @@
 	 */
 
 	/*jslint browser:true, node:true*/
-	/*global define, Event, Node*/
+	/*global define, event, Node*/
 
 
 	/**
@@ -131,7 +131,7 @@
 		layer.addEventListener('touchend', this.onTouchEnd, false);
 		layer.addEventListener('touchcancel', this.onTouchCancel, false);
 
-		// Hack is required for browsers that don't support Event#stopImmediatePropagation (e.g. Android 2)
+		// Hack is required for browsers that don't support event#stopImmediatePropagation (e.g. Android 2)
 		// which is how FastClick normally stops click events bubbling to callbacks registered on the FastClick
 		// layer when they are cancelled.
 		if (!Event.prototype.stopImmediatePropagation) {
@@ -653,7 +653,7 @@
 				event.stopImmediatePropagation();
 			} else {
 
-				// Part of the hack for browsers that don't support Event#stopImmediatePropagation (e.g. Android 2)
+				// Part of the hack for browsers that don't support event#stopImmediatePropagation (e.g. Android 2)
 				event.propagationStopped = true;
 			}
 

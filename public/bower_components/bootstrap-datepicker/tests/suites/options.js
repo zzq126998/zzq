@@ -1585,7 +1585,7 @@ test('templates', function(){
     equal(picker.find('.datepicker-days .next').prop('innerHTML'), $('<div>').html('&raquo;').text());
 });
 
-test('Nav arrow html templates with span tag', function () {
+test('nav arrow html templates with span tag', function () {
     var input = $('<input />')
             .appendTo('#qunit-fixture')
             .val('2012-10-26')
@@ -1605,7 +1605,7 @@ test('Nav arrow html templates with span tag', function () {
     ok(target.hasClass('active'), 'Month is selected');
 });
 
-test('Nav arrow html templates .prev click', function () {
+test('nav arrow html templates .prev click', function () {
     var input = $('<input />')
         .appendTo('#qunit-fixture')
         .val('2012-10-26')

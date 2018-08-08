@@ -14,14 +14,6 @@
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				{{--<li class="active"><a href="http://admin.zzqlv.com/admin/index">平台管理员列表<span class="sr-only">(current)</span></a></li>--}}
-				{{--<li><a href="/activity/index">活动列表</a></li>--}}
-				{{--<li><a href="http://admin.zzqlv.com/admin/index">平台管理</a></li>--}}
-				{{--<li><a href="http://admin.zzqlv.com/order/index">订单量统计</a></li>--}}
-				{{--<li><a href="http://admin.zzqlv.com/role/index">角色管理</a></li>--}}
-				{{--@foreach(\App\Models\Navs::where('parent_id',0)->get() as $k1=>$v1)--}}
-				{{--<li><a href="{{route($v1->url)}}">{{$v1->name}}</a></li>--}}
-				{{--@endforeach--}}
 				@foreach(\App\Models\Navs::where('parent_id',0)->get() as $k1=>$v1)
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{$v1->name}} <span class="caret"></span></a>

@@ -431,7 +431,7 @@ function isArray(obj) {
 }
 
 /**
- * Event emitter constructor.
+ * event emitter constructor.
  *
  * @api public
  */

@@ -11,7 +11,7 @@ class EventPrizeController extends Controller
 {
     public function index(){
         $events = EventPrize::paginate(4);
-        return view('admin.eventPrize.index',compact('events'));
+        return view('admin.event_prize.index',compact('events'));
     }
     public function add(Request $request){
         $events = Event::all();
@@ -24,9 +24,9 @@ class EventPrizeController extends Controller
 //            ]);
              EventPrize::create($request->post());
             $request->session()->flash('success','添加成功');
-            return redirect()->route('eventprize.index');
+            return redirect()->route('event_prize.index');
         }
-        return view('admin.eventPrize.add',compact('events'));
+        return view('admin.event_prize.add',compact('events'));
     }
     public function edit(Request $request,$id){
         $events = Event::all();
@@ -36,7 +36,7 @@ class EventPrizeController extends Controller
         //判断活动是否已经开奖
         if($eventa['is_prize']===1){
             $request->session()->flash('danger','活动已经开奖，不能修改奖品');
-            return redirect()->route('eventprize.index');
+            return redirect()->route('event_prize.index');
         }
         if($request->isMethod('post')){
             $this->validate($request,[
@@ -46,9 +46,9 @@ class EventPrizeController extends Controller
             ]);
             $even->update($request->post());
             $request->session()->flash('success','修改成功');
-            return redirect()->route('eventprize.index');
+            return redirect()->route('event_prize.index');
         }
-        return view('admin.eventPrize.edit',compact('even','events'));
+        return view('admin.event_prize.edit',compact('even','events'));
     }
     public function del(Request $request,$id){
         $event = EventPrize::find($id);
@@ -56,10 +56,10 @@ class EventPrizeController extends Controller
 //        //判断活动是否已经开奖
         if($eventa['is_prize']===1){
             $request->session()->flash('danger','活动已经开奖，不能删除奖品');
-            return redirect()->route('eventprize.index');
+            return redirect()->route('event_prize.index');
         }
         $event->delete();
         $request->session()->flash('success','删除成功');
-        return redirect()->route('eventprize.index');
+        return redirect()->route('event_prize.index');
     }
 }

@@ -82,10 +82,10 @@ Route::domain('admin.zzqlv.com')->namespace('Admin')->group(function () {
     Route::any('event/del/{id}',"EventController@del")->name("event.del");
 
     //奖品列表
-    Route::get('eventprize/index',"EventPrizeController@index")->name("eventprize.index");
-    Route::any('eventprize/add',"EventPrizeController@add")->name("eventprize.add");
-    Route::any('eventprize/edit/{id}',"EventPrizeController@edit")->name("eventprize.edit");
-    Route::any('eventprize/del/{id}',"EventPrizeController@del")->name("eventprize.del");
+    Route::get('event_prize/index',"EventPrizeController@index")->name("event_prize.index");
+    Route::any('event_prize/add',"EventPrizeController@add")->name("event_prize.add");
+    Route::any('event_prize/edit/{id}',"EventPrizeController@edit")->name("event_prize.edit");
+    Route::any('event_prize/del/{id}',"EventPrizeController@del")->name("event_prize.del");
 
     //没有权限显示
 //    Route::any('curr',"RoleController@del")->name("role.del");

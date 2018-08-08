@@ -7,7 +7,7 @@ define(function () {
     inputTooLong: function (args) {
       var overChars = args.input.length - args.maximum;
 
-      var message = 'Role favore cancella ' + overChars + ' caratter';
+      var message = 'role favore cancella ' + overChars + ' caratter';
 
       if (overChars !== 1) {
         message += 'i';
@@ -20,7 +20,7 @@ define(function () {
     inputTooShort: function (args) {
       var remainingChars = args.minimum - args.input.length;
 
-      var message = 'Role favore inserisci ' +remainingChars+ ' o più caratteri';
+      var message = 'role favore inserisci ' +remainingChars+ ' o più caratteri';
 
       return message;
     },

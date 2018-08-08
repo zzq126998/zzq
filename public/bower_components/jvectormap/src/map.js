@@ -92,17 +92,17 @@
 <b>Plase note: static labels feature is not supported in Internet Explorer 8 and below.</b>
  * @param {Array|Object|String} params.selectedRegions Set initially selected regions.
  * @param {Array|Object|String} params.selectedMarkers Set initially selected markers.
- * @param {Function} params.onRegionTipShow <code>(Event e, Object tip, String code)</code> Will be called right before the region tip is going to be shown.
- * @param {Function} params.onRegionOver <code>(Event e, String code)</code> Will be called on region mouse over event.
- * @param {Function} params.onRegionOut <code>(Event e, String code)</code> Will be called on region mouse out event.
- * @param {Function} params.onRegionClick <code>(Event e, String code)</code> Will be called on region click event.
- * @param {Function} params.onRegionSelected <code>(Event e, String code, Boolean isSelected, Array selectedRegions)</code> Will be called when region is (de)selected. <code>isSelected</code> parameter of the callback indicates whether region is selected or not. <code>selectedRegions</code> contains codes of all currently selected regions.
- * @param {Function} params.onMarkerTipShow <code>(Event e, Object tip, String code)</code> Will be called right before the marker tip is going to be shown.
- * @param {Function} params.onMarkerOver <code>(Event e, String code)</code> Will be called on marker mouse over event.
- * @param {Function} params.onMarkerOut <code>(Event e, String code)</code> Will be called on marker mouse out event.
- * @param {Function} params.onMarkerClick <code>(Event e, String code)</code> Will be called on marker click event.
- * @param {Function} params.onMarkerSelected <code>(Event e, String code, Boolean isSelected, Array selectedMarkers)</code> Will be called when marker is (de)selected. <code>isSelected</code> parameter of the callback indicates whether marker is selected or not. <code>selectedMarkers</code> contains codes of all currently selected markers.
- * @param {Function} params.onViewportChange <code>(Event e, Number scale)</code> Triggered when the map's viewport is changed (map was panned or zoomed).
+ * @param {Function} params.onRegionTipShow <code>(event e, Object tip, String code)</code> Will be called right before the region tip is going to be shown.
+ * @param {Function} params.onRegionOver <code>(event e, String code)</code> Will be called on region mouse over event.
+ * @param {Function} params.onRegionOut <code>(event e, String code)</code> Will be called on region mouse out event.
+ * @param {Function} params.onRegionClick <code>(event e, String code)</code> Will be called on region click event.
+ * @param {Function} params.onRegionSelected <code>(event e, String code, Boolean isSelected, Array selectedRegions)</code> Will be called when region is (de)selected. <code>isSelected</code> parameter of the callback indicates whether region is selected or not. <code>selectedRegions</code> contains codes of all currently selected regions.
+ * @param {Function} params.onMarkerTipShow <code>(event e, Object tip, String code)</code> Will be called right before the marker tip is going to be shown.
+ * @param {Function} params.onMarkerOver <code>(event e, String code)</code> Will be called on marker mouse over event.
+ * @param {Function} params.onMarkerOut <code>(event e, String code)</code> Will be called on marker mouse out event.
+ * @param {Function} params.onMarkerClick <code>(event e, String code)</code> Will be called on marker click event.
+ * @param {Function} params.onMarkerSelected <code>(event e, String code, Boolean isSelected, Array selectedMarkers)</code> Will be called when marker is (de)selected. <code>isSelected</code> parameter of the callback indicates whether marker is selected or not. <code>selectedMarkers</code> contains codes of all currently selected markers.
+ * @param {Function} params.onViewportChange <code>(event e, Number scale)</code> Triggered when the map's viewport is changed (map was panned or zoomed).
  */
 jvm.Map = function(params) {
   var map = this,
