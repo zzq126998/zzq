@@ -23,7 +23,7 @@ class ShopCategoryController extends BaseController
             $request->session()->flash('success',"添加成功");
             return redirect()->route("shop_category.index");
         }
-        return view("shop_category.add");
+        return view("admin.shop_category.add");
     }
     public function edit(Request $request,$id){
         $shops = ShopCategory::findOrFail($id);
@@ -36,7 +36,7 @@ class ShopCategoryController extends BaseController
             $request->session()->flash('success',"编辑信息成功");
             return redirect()->route("admin.shop_category.index");
         }
-        return view("shop_category.edit",compact("shops"));
+        return view("admin.shop_category.edit",compact("shops"));
     }
     public function del(Request $request,$id){
         $data = ShopCategory::find($id);

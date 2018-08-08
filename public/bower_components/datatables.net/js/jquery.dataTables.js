@@ -9526,7 +9526,7 @@
 		"_aSortData": null,
 	
 		/**
-		 * Per cell filtering data cache. As per the sort data cache, used to
+		 * Role cell filtering data cache. As per the sort data cache, used to
 		 * increase the performance of the filtering in DataTables
 		 *  @type array
 		 *  @default null

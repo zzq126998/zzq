@@ -2,6 +2,12 @@
 @section('title',"后台首页")
 @section('content')
     <a href="add" class="btn btn-success">添加</a>
+    <div style="float: right">
+        <a href="" class="btn btn-primary">已结束</a>
+        <a href="" class="btn btn-primary">正在进行</a>
+        <a href="" class="btn btn-primary">未开始</a>
+    </div>
+
     <table class="table table-bordered">
         <tr>
             <td>id</td>

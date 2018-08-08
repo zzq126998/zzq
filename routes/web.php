@@ -15,6 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/mail', function () {
+    $order =\App\Models\Order::find(10);
+    return new \App\Mail\OrderShipped($order);
+});
+
 //平台
 Route::domain('admin.zzqlv.com')->namespace('Admin')->group(function () {
     //店铺分类
@@ -23,10 +28,10 @@ Route::domain('admin.zzqlv.com')->namespace('Admin')->group(function () {
     Route::any('admin/shop_category/edit/{id}',"ShopCategoryController@edit")->name("admin.shop_category.edit");
     Route::get('admin/shop_category/del/{id}',"ShopCategoryController@del")->name("admin.shop_category.del");
 
-    Route::get('activity/index',"ActivityController@index")->name("activity.index");
-    Route::any('activity/add',"ActivityController@add")->name("activity.add");
-    Route::any('activity/edit/{id}',"ActivityController@edit")->name("activity.edit");
-    Route::get('activity/del/{id}',"ActivityController@del")->name("activity.del");
+    Route::get('activity/index',"ActivityController@index")->name("activitys.index");
+    Route::any('activity/add',"ActivityController@add")->name("activitys.add");
+    Route::any('activity/edit/{id}',"ActivityController@edit")->name("activitys.edit");
+    Route::get('activity/del/{id}',"ActivityController@del")->name("activitys.del");
 
 });
 
@@ -37,7 +42,10 @@ Route::domain('admin.zzqlv.com')->namespace('Admin')->group(function () {
     Route::any('shop/add',"ShopController@add")->name("shop.add");
     Route::any('shop/edit/{id}',"ShopController@edit")->name("shop.edit");
     Route::get('shop/del/{id}',"ShopController@del")->name("shop.del");
+    Route::get('shop/exam/{id}',"ShopController@exam")->name("shop.exam");
 
+    //订单量统计
+    Route::any('order/index',"OrderController@index")->name("orders.index");
     //平台管理员
     Route::get('admin/index',"AdminController@index")->name("admin.index");
     Route::any('admin/add',"AdminController@add")->name("admin.add");
@@ -46,6 +54,41 @@ Route::domain('admin.zzqlv.com')->namespace('Admin')->group(function () {
     Route::any('admin/login',"AdminController@login")->name("admin.login");
     Route::any('admin/logout',"AdminController@logout")->name("admin.logout");
     Route::any('admin/mopwd',"AdminController@mopwd")->name("admin.mopwd");
+
+
+    //平台导航管理
+    Route::get('nav/index',"NavController@index")->name("nav.index");
+    Route::any('nav/add',"NavController@add")->name("nav.add");
+    Route::any('nav/edit/{id}',"NavController@edit")->name("nav.edit");
+    Route::get('nav/del/{id}',"NavController@del")->name("nav.del");
+
+    //权限管理
+    Route::get('per/index',"PerController@index")->name("per.index");
+    Route::any('per/add',"PerController@add")->name("per.add");
+    Route::any('per/edit/{id}',"PerController@edit")->name("per.edit");
+    Route::get('per/del/{id}',"PerController@del")->name("per.del");
+
+    //角色管理
+    Route::get('role/index',"RoleController@index")->name("role.index");
+    Route::any('role/add',"RoleController@add")->name("role.add");
+    Route::any('role/edit/{id}',"RoleController@edit")->name("role.edit");
+    Route::any('role/del/{id}',"RoleController@del")->name("role.del");
+
+
+    //抽奖活动管理
+    Route::get('event/index',"EventController@index")->name("event.index");
+    Route::any('event/add',"EventController@add")->name("event.add");
+    Route::any('event/edit/{id}',"EventController@edit")->name("event.edit");
+    Route::any('event/del/{id}',"EventController@del")->name("event.del");
+
+    //奖品列表
+    Route::get('eventprize/index',"EventPrizeController@index")->name("eventprize.index");
+    Route::any('eventprize/add',"EventPrizeController@add")->name("eventprize.add");
+    Route::any('eventprize/edit/{id}',"EventPrizeController@edit")->name("eventprize.edit");
+    Route::any('eventprize/del/{id}',"EventPrizeController@del")->name("eventprize.del");
+
+    //没有权限显示
+//    Route::any('curr',"RoleController@del")->name("role.del");
 });
 
 
@@ -68,6 +111,10 @@ Route::domain('shop.zzqlv.com')->namespace('Shop')->group(function () {
     Route::any('menu/edit/{id}',"MenuController@edit")->name("menu.edit");
     Route::get('menu/del/{id}',"MenuController@del")->name("menu.del");
 
+//订单管理
+    Route::get('order/index',"OrderController@index")->name("order.index");
+    Route::any('order/cancel/{id}',"OrderController@cancel")->name("order.cancel");
+    Route::get('order/details/{id}',"OrderController@details")->name("order.details");
 
 //菜品
     Route::get('menucategories/index',"MenuCategoriesController@index")->name("menucategories.index");
@@ -75,7 +122,14 @@ Route::domain('shop.zzqlv.com')->namespace('Shop')->group(function () {
     Route::any('menucategories/edit/{id}',"MenuCategoriesController@edit")->name("menucategories.edit");
     Route::get('menucategories/del/{id}',"MenuCategoriesController@del")->name("menucategories.del");
 
+    //抽奖活动报名
+    //抽奖活动管理
+    Route::get('eventmember/index',"EventMemberController@index")->name("eventmember.index");
+    Route::any('eventmember/sign/{id}',"EventMemberController@sign")->name("eventmember.sign");
+    Route::any('eventmember/edit/{id}',"EventMemberController@edit")->name("eventmember.edit");
+
+
     //活动
     Route::get('activity/index',"ActivityController@index")->name("activity.index");
-    Route::get('activity/look/{id}',"ActivityController@look")->name("activity.look");
+    Route::get('activity/look/{id}',"ActivityController@look")->name("activity.look ");
 });

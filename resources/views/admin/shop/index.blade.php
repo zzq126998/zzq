@@ -75,7 +75,13 @@
                 <td>{{$shop->start_cost}}</td>
                 <td>{{$shop->notice}}</td>
                 <td>{{$shop->discount}}</td>
-                <td>{{$shop->status}}</td>
+                <td>
+                    @if($shop->status===1)
+                        <a href="exam/{{$shop->id}}" class="btn btn-info">已审核</a>
+                    @else
+                        <a href="exam/{{$shop->id}}" class="btn btn-info">未审核</a>
+                    @endif
+                </td>
                 <td>
                     <a href="edit/{{$shop->id}}" class="btn btn-info"><i class="glyphicon glyphicon-pencil"></i></a>
                     <a href="del/{{$shop->id}}" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></a>

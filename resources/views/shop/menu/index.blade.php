@@ -5,12 +5,12 @@
         <form class="form-inline" method="get" action="{{route('menu.index')}}">
             <div style="width: 500px; height: 35px;display: inline-block;position: relative;">
             <select name="menu_id" class="btn btn-default" style="position: absolute;left: 0px ;top: 0px;">
+                <option value="0">分类</option>
                 @foreach($menus as $menu)
-                    <option value="0">分类</option>
                 <option value="{{$menu->id}}">{{$menu->name   }}</option>
                     @endforeach
             </select>
-            <input type="text" class="btn btn-default" name="search" value="" placeholder="请输入关键字" style="position: absolute;left: 80px ;top: 0px; " >
+            <input type="text" class="btn btn-default" name="search" value="" placeholder="请输入关键字" style="position: absolute;left: 90px ;top: 0px; " >
 
                <input type="text" name="minmoney"  style="width: 64px; height: 34px;position: absolute;left: 270px ;top: 0px;border-radius: 5px;background-color: #F4F4F4;border:1px solid #DDDDDD" placeholder="最低价格">
                <b style="position: absolute;left: 335px ;top: 7px;"><i class="

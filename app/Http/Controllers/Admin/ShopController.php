@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Mail\OrderShipped;
 use App\Models\Shop;
 use App\Models\ShopCategory;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use MongoDB\Driver\Exception\LogicException;
 
 class ShopController extends Controller
@@ -51,5 +53,30 @@ class ShopController extends Controller
         $shop->delete();
         $request->session()->flash('success',"删除成功");
         return redirect()->route("shop.index");
+    }
+    public function exam(Request $request,$id){
+        $shop = Shop::findOrFail($id);
+//        dd($shop);
+        if($shop->status === 1){
+            $shop->status = 0;
+            $shop->save();
+            $order =\App\Models\Order::find(10);
+            $user=User::where('shop_id',$id)->first();
+            Mail::to($user)->send(new OrderShipped($order));
+            $request->session()->flash('success',"审核成功");
+            return redirect()->route("shop.index");
+        }
+        if($shop->status === 0){
+            $shop->status = 1;
+            $shop->save();
+            $order =\App\Models\Order::find(10);
+
+            $user=User::where('shop_id',$id)->first();
+
+            Mail::to($user)->send(new OrderShipped($order));
+            $request->session()->flash('success',"取消审核成功");
+            return redirect()->route("shop.index");
+        }
+
     }
 }

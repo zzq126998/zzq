@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('layouts.shop.default')
 @section('title','增加')
 @section('content')
     <div class="">

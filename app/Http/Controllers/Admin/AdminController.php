@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Spatie\Permission\Models\Role;
 
 class AdminController extends BaseController
 {
@@ -25,11 +26,16 @@ class AdminController extends BaseController
                 'password'=>'required'
             ]);
             $data['password'] = bcrypt($data['password']);
-            Admin::create($data);
+            $admin = Admin::create($data);
+            //给用户对象添加角色 同步角色
+            $admin->syncRoles($request->post('role'));
+
             $request->session()->flash('success',"添加用户成功");
-            return redirect()->route("admin.login");
+            return redirect()->route("admin.index");
         }
-        return view('admin.admin.add');
+        //得到用户权限
+        $roles = Role::all();
+        return view('admin.admin.add',compact('roles'));
     }
     //编辑
     public function edit(Request $request,$id){

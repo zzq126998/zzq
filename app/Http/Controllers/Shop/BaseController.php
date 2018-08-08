@@ -13,5 +13,7 @@ class BaseController extends Controller
             $this->middleware('guest',[
                 'only'=>['login']
             ]);
+            //设置header头 解决跨域问题
+            header('Access-Control-Allow-Origin:*');
         }
 }

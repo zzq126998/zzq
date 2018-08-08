@@ -1,7 +1,6 @@
-@extends('layouts.admin.default')
+@extends('layouts.shop.default')
 @section('title',"后台首页")
 @section('content')
-    <a href="add" class="btn btn-success ">添加</a>
     <table class="table table-bordered">
         <tr>
             <td>id</td>

@@ -1,4 +1,4 @@
-@extends('layouts.admin.default')
+@extends('layouts.shop.default')
 @section('title','增加')
 @section('content')
     <div style="background: #ECF0F5;height: 300px;width: 600px;margin:0 auto;margin-top: 50px;">

@@ -14,20 +14,28 @@
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="/user/index">后台首页<span class="sr-only">(current)</span></a></li>
-				<li><a href="/user/help">帮助</a></li>
+				{{--<li class="active"><a href="http://admin.zzqlv.com/admin/index">平台管理员列表<span class="sr-only">(current)</span></a></li>--}}
+				{{--<li><a href="/activity/index">活动列表</a></li>--}}
+				{{--<li><a href="http://admin.zzqlv.com/admin/index">平台管理</a></li>--}}
+				{{--<li><a href="http://admin.zzqlv.com/order/index">订单量统计</a></li>--}}
+				{{--<li><a href="http://admin.zzqlv.com/role/index">角色管理</a></li>--}}
+				{{--@foreach(\App\Models\Navs::where('parent_id',0)->get() as $k1=>$v1)--}}
+				{{--<li><a href="{{route($v1->url)}}">{{$v1->name}}</a></li>--}}
+				{{--@endforeach--}}
+				@foreach(\App\Models\Navs::where('parent_id',0)->get() as $k1=>$v1)
 				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{$v1->name}} <span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="#">注册</a></li>
-						<li><a href="#">Another action</a></li>
-						<li><a href="#">Something else here</a></li>
-						<li role="separator" class="divider"></li>
-						<li><a href="#">Separated link</a></li>
-						<li role="separator" class="divider"></li>
-						<li><a href="#">One more separated link</a></li>
+
+						@foreach(\App\Models\Navs::where("parent_id",$v1->id)->get() as $k2=>$v2)
+							{{--@if(\Illuminate\Support\Facades\Auth::guard('admin')->user()->can($v2->url))--}}
+								<li><a href="{{route($v2->url)}}">{{$v2->name}}</a></li>
+							{{--@endif--}}
+						@endforeach
+
 					</ul>
 				</li>
+				@endforeach
 			</ul>
 			<form class="navbar-form navbar-left">
 				<div class="form-group">
