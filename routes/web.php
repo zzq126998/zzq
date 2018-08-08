@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 Route::get('/mail', function () {
@@ -21,7 +21,7 @@ Route::get('/mail', function () {
 });
 
 //平台
-Route::domain('admin.zzqlv.com')->namespace('Admin')->group(function () {
+Route::domain('admin.dxhang.cn')->namespace('Admin')->group(function () {
     //店铺分类
     Route::get('admin/shop_category/index',"ShopCategoryController@index")->name("admin.shop_category.index");
     Route::any('admin/shop_category/add',"ShopCategoryController@add")->name("admin.shop_category.add");
@@ -36,7 +36,7 @@ Route::domain('admin.zzqlv.com')->namespace('Admin')->group(function () {
 });
 
 
-Route::domain('admin.zzqlv.com')->namespace('Admin')->group(function () {
+Route::domain('admin.dxhang.cn')->namespace('Admin')->group(function () {
     //商家信息
     Route::get('shop/index',"ShopController@index")->name("shop.index");
     Route::any('shop/add',"ShopController@add")->name("shop.add");
@@ -93,7 +93,7 @@ Route::domain('admin.zzqlv.com')->namespace('Admin')->group(function () {
 
 
 //商户
-Route::domain('shop.zzqlv.com')->namespace('Shop')->group(function () {
+Route::domain('shop.dxhang.cn')->namespace('Shop')->group(function () {
     Route::get('user/reg',"UserController@reg")->name("reg");
     Route::any('shop/user/add',"UserController@add")->name("add");
 
