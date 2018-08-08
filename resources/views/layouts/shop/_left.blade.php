@@ -42,8 +42,8 @@
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="active"><a href="http://shop.zzqlv.com/user/index"><i class="fa fa-circle-o"></i>用户列表</a></li>
-                    <li><a href="http://shop.zzqlv.com/user/creat"><i class="fa fa-circle-o"></i>用户注册</a></li>
+                    <li class="active"><a href="http://shop.dxhang.cn/user/index"><i class="fa fa-circle-o"></i>用户列表</a></li>
+                    <li><a href="http://shop.dxhang.cn/user/creat"><i class="fa fa-circle-o"></i>用户注册</a></li>
                 </ul>
             </li>
 
@@ -56,9 +56,9 @@
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="active"><a href="http://admin.zzqlv.com/admin/shop_category/index"><i class="fa fa-circle-o"></i>商家分类</a></li>
+                    <li class="active"><a href="http://shop.dxhang.cn/admin/shop_category/index"><i class="fa fa-circle-o"></i>商家分类</a></li>
                     <li><a href=""><i class="fa fa-circle-o"></i>商家信息</a></li>
-                    <li><a href="http://shop.zzqlv.com/shop/user/add"><i class="fa fa-circle-o"></i>账号注册</a></li>
+                    <li><a href="http://shop.dxhang.cn/shop/user/add"><i class="fa fa-circle-o"></i>账号注册</a></li>
                 </ul>
             </li>
             <li class="treeview">
@@ -70,10 +70,10 @@
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="http://shop.zzqlv.com/menucategories/index"><i class="fa fa-circle-o"></i> 菜单分类</a></li>
-                    <li><a href="http://shop.zzqlv.com/menucategories/add"><i class="fa fa-circle-o"></i> 添加分类</a></li>
-                    <li><a href="http://shop.zzqlv.com/menu/index"><i class="fa fa-circle-o"></i> 菜单列表</a></li>
-                    <li><a href="http://shop.zzqlv.com/menu/add"><i class="fa fa-circle-o"></i>添加菜单</a></li>
+                    <li><a href="http://shop.dxhang.cn/menucategories/index"><i class="fa fa-circle-o"></i> 菜单分类</a></li>
+                    <li><a href="http://shop.dxhang.cn/menucategories/add"><i class="fa fa-circle-o"></i> 添加分类</a></li>
+                    <li><a href="http://shop.dxhang.cn/menu/index"><i class="fa fa-circle-o"></i> 菜单列表</a></li>
+                    <li><a href="http://shop.dxhang.cn/menu/add"><i class="fa fa-circle-o"></i>添加菜单</a></li>
                 </ul>
             </li>
 
@@ -86,8 +86,8 @@
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="http://admin.zzqlv.com/admin/shop_category/index"><i class="fa fa-circle-o"></i> 分类列表</a></li>
-                    <li><a href="http://admin.zzqlv.com/admin/shop_category/add"><i class="fa fa-circle-o"></i> 添加分类</a></li>
+                    <li><a href="http://shop.dxhang.cn/admin/shop_category/index"><i class="fa fa-circle-o"></i> 分类列表</a></li>
+                    <li><a href="http://shop.dxhang.cn/admin/shop_category/add"><i class="fa fa-circle-o"></i> 添加分类</a></li>
                 </ul>
             </li>
             <li class="treeview">
@@ -99,7 +99,7 @@
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="http://shop.zzqlv.com/order/index"><i class="fa fa-circle-o"></i> 订单列表</a></li>
+                    <li><a href="http://shop.dxhang.cn/order/index"><i class="fa fa-circle-o"></i> 订单列表</a></li>
                 </ul>
             </li>
             <li class="treeview">
