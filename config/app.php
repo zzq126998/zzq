@@ -179,6 +179,9 @@ return [
         App\Providers\RouteServiceProvider::class,
         Overtrue\LaravelUEditor\UEditorServiceProvider::class,
 
+        Laravel\Scout\ScoutServiceProvider::class,
+        Vanry\Scout\TNTSearchScoutServiceProvider::class,
+
     ],
 
     /*

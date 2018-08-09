@@ -16,7 +16,12 @@ class ShopController extends BaseController
 //        $keyword="%";
         $keyword = $request->input('keyword')?$request->input('keyword'):"";
 //        dd($keyword);
-        $shops = Shop::where('status','1')->where('shop_name','like',"%{$keyword}%")->get();
+        if($keyword === null){
+            $shops = Shop::where('status','1')->get();
+        }else{
+            $shops = Shop::where('status','1')->where('shop_name','like',"%{$keyword}%")->get();
+        }
+
             foreach ($shops as $shop){
                 $shop->distance = rand(1000,3000);
                 $shop->estimate_time = $shop->distance/1000;
