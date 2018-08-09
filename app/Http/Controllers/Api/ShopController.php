@@ -14,7 +14,7 @@ class ShopController extends BaseController
     //首页商家显示
     public function list(Request $request){
 //        $keyword="%";
-        $keyword = $request->input('keyword')?$request->input('keyword'):"";
+        $keyword = $request->input('keyword');
 //        dd($keyword);
         if($keyword === null){
             $shops = Shop::where('status','1')->get();
