@@ -19,7 +19,7 @@ class ShopController extends BaseController
         if($keyword === null){
             $shops = Shop::where('status','1')->get();
         }else{
-            $shops = Shop::where('status','1')->where('shop_name','like',"%{$keyword}%")->get();
+            $shops = Shop::search($keyword)->where('status','1')->get();
         }
 
             foreach ($shops as $shop){
