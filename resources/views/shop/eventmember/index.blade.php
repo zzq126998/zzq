@@ -17,7 +17,7 @@
                 <td>{{$event->end_time}}</td>
                 <td>
                     <a href="sign/{{$event->id}}" class="btn btn-info">报名</a>
-                    <a href="del/{{$event->id}}" class="btn btn-danger">查看详情</a>
+                    <a href="look/{{$event->id}}" class="btn btn-danger">查看详情</a>
                 </td>
             </tr>
         @endforeach

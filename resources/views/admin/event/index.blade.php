@@ -32,6 +32,7 @@
                 <td>
                     <a href="edit/{{$event->id}}" class="btn btn-info"><i class="glyphicon glyphicon-pencil"></i></a>
                     <a href="del/{{$event->id}}" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></a>
+                    <a href="lottery/{{$event->id}}" class="btn btn-danger">开奖</a>
                 </td>
             </tr>
         @endforeach

@@ -126,7 +126,7 @@ Route::domain('shop.dxhang.cn')->namespace('Shop')->group(function () {
     //抽奖活动管理
     Route::get('eventmember/index',"EventMemberController@index")->name("eventmember.index");
     Route::any('eventmember/sign/{id}',"EventMemberController@sign")->name("eventmember.sign");
-    Route::any('eventmember/edit/{id}',"EventMemberController@edit")->name("eventmember.edit");
+    Route::any('eventmember/look/{id}',"EventMemberController@look")->name("eventmember.look");
 
 
     //活动

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Shop;
 
 use App\Models\Event;
 use App\Models\EventMember;
+use App\Models\EventPrize;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -32,8 +33,11 @@ class EventMemberController extends Controller
         return redirect()->route('eventmember.index');
     }
     //查看详情
-    public function detail(Request $request,$id){
-
+    public function look(Request $request,$id){
+        $events = Event::find($id);
+        //奖品
+        $prizes = EventPrize::where('event_id',$id)->get();
+        return view('shop.eventmember.look',compact('events','prizes'));
     }
 
 }
